@@ -33,11 +33,11 @@ class App extends React.Component {
   }
 
   handleInputChange = event => {
-    console.log(event.target.task);
+    console.log(event.target.name);
     this.setState({ 
       todolist: {
         ...this.state.todolist,
-        [event.target.task]: event.target.value
+        [event.target.name]: event.target.value
         }
       });
   };
@@ -61,12 +61,6 @@ class App extends React.Component {
           ))}
         </div>
         <form onSubmit={this.addToDo}>
-            <input
-              placeholder="id"
-              value={this.state.todolist.id}
-              onChange={this.handleInputChange}
-              name="id"
-            />
             <input
               placeholder="What do you need to do?"
               value={this.state.todolist.task}
