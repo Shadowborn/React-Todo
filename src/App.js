@@ -22,7 +22,7 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   constructor(){
     super();
-    this.state={
+    this.state = {
       toDoOnState: toDoLists,
       todolist: {
         id: '',
@@ -62,12 +62,19 @@ class App extends React.Component {
         </div>
         <form onSubmit={this.addToDo}>
             <input
+              placeholder="id"
+              value={this.state.todolist.id}
+              onChange={this.handleInputChange}
+              name="id"
+            />
+            <input
               placeholder="What do you need to do?"
               value={this.state.todolist.task}
               onChange={this.handleInputChange}
+              name="task"
             />
-        </form>
         <button>Add task</button>
+        </form>
       </div>
       </div>
     );
