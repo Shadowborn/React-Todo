@@ -1,26 +1,30 @@
 import React from "react";
-import ItemList from "./components/TodoComponents/TodoList";
-import AddItemForm from "./components/TodoComponents/TodoForm";
+import TodoList from "./components/TodoComponents/TodoList";
+import TodoForm from "./components/TodoComponents/TodoForm";
 import "./components/TodoComponents/Todo.css";
 
-const groceries = [
+
+/*export const applyClasses = 
+(classList=[]) => classList.join(' ')*/
+
+const list = [
   {
-    name: "Bananas",
+    name: "Mana Potion",
     id: 123,
     purchased: false
   },
   {
-    name: "Torillas",
+    name: "Axe",
     id: 124,
     purchased: false
   },
   {
-    name: "Milk",
+    name: "Sword",
     id: 1235,
     purchased: false
   },
   {
-    name: "Pizza Sauce",
+    name: "Health Potion",
     id: 1246,
     purchased: false
   },
@@ -30,7 +34,7 @@ const groceries = [
     purchased: false
   },
   {
-    name: "Granola",
+    name: "Magic Box",
     id: 1248,
     purchased: true
   }
@@ -40,7 +44,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      groceries
+      list
     };
   }
 
@@ -48,8 +52,8 @@ class App extends React.Component {
     // this takes an item string, copies the groceries on state, and adds in
     // the newly created item object
     this.setState({
-      groceries: [
-        ...this.state.groceries,
+      list: [
+        ...this.state.list,
         { name: item, purchased: false, id: Date.now() }
       ]
     });
@@ -64,7 +68,7 @@ class App extends React.Component {
     // So the end result is a NEW array containing the old items except for
     // the changed item, which is NEW and modified
     this.setState({
-      groceries: this.state.groceries.map(item =>
+      list: this.state.list.map(item =>
         item.id === id ? { ...item, purchased: !item.purchased } : item
       )
     });
@@ -80,7 +84,7 @@ class App extends React.Component {
     // })
     // this.setState({ groceries: newGroceriesArray });
     this.setState({
-      groceries: this.state.groceries.filter(item => !item.purchased)
+      list: this.state.list.filter(item => !item.purchased)
     });
   };
 
@@ -88,14 +92,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-          <h1>Shopping List</h1>
-          <AddItemForm addItem={this.addItem} />
+          <h1>Inventory List</h1>
+          <TodoForm addItem={this.addItem} />
         </div>
-        <ItemList
-          groceries={this.state.groceries}
+        <TodoList
+          list={this.state.list}
           toggleComplete={this.toggleComplete}
         />
-        <button onClick={this.removePurchased}>Clear Purchased</button>
+        <button onClick={this.removePurchased}>Clear Chosen</button>
       </div>
     );
   }

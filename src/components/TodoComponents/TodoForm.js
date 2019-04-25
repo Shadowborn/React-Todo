@@ -1,6 +1,6 @@
 import React from "react";
 
-class AddItemForm extends React.Component {
+class TodoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,9 +17,9 @@ class AddItemForm extends React.Component {
   // this.state.input as the argument, so a new item can be created in App's
   // state
   handleSubmit = event => {
-    event.preventDefault();
-    this.props.addItem(this.state.input);
-    this.setState({ input: "" });
+    event.preventDefault(); //preserves state
+    this.props.addItem(this.state.input); // update global state with current value
+    this.setState({ input: "" }); //reset the input field
   };
 
   render() {
@@ -38,4 +38,4 @@ class AddItemForm extends React.Component {
   }
 }
 
-export default AddItemForm;
+export default TodoForm;
