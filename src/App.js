@@ -10,7 +10,7 @@ import "./components/TodoComponents/Todo.css";
 const list = [
   {
     name: "Mana Potion",
-    id: 123,
+    id: 123,  
     purchased: false
   },
   {
@@ -21,6 +21,26 @@ const list = [
   {
     name: "Sword",
     id: 1235,
+    purchased: false
+  },
+  {
+    name: "Health Potion",
+    id: 1246,
+    purchased: false
+  },
+  {
+    name: "Health Potion",
+    id: 1246,
+    purchased: false
+  },
+  {
+    name: "Health Potion",
+    id: 1246,
+    purchased: false
+  },
+  {
+    name: "Health Potion",
+    id: 1246,
     purchased: false
   },
   {
