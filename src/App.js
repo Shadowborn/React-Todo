@@ -25,27 +25,27 @@ const list = [
   },
   {
     name: "Health Potion",
-    id: 1246,
+    id: 11,
     purchased: false
   },
   {
     name: "Health Potion",
-    id: 1246,
+    id: 34,
     purchased: false
   },
   {
     name: "Health Potion",
-    id: 1246,
+    id: 64,
     purchased: false
   },
   {
     name: "Health Potion",
-    id: 1246,
+    id: 23,
     purchased: false
   },
   {
     name: "Health Potion",
-    id: 1246,
+    id: 54,
     purchased: false
   },
   {
